@@ -57,20 +57,22 @@ def upload_file():
         p = df2.dropna(axis=1 , how='all')
         name_filter = df2[df2['Pensioner Name'].astype(str).str.match('(?!(^[a-zA-Z\s\.]*$))')].iloc[:,1].sort_values()
         cnic_filter = df2[df2['CNIC'].astype(str).str.match('(?!(^[\'][0-9+]{5}-[0-9+]{7}-[0-9]{1}[\']$))')].iloc[:,2]
-        wallet_filter = df2[df2['Wallet Account No'].astype(str).str.contains('^(?!^[0-9+]{8}$)')].iloc[:,4]
+        claim_filter = df2[df2['Claim No'].astype(str).str.match('(?!(^[\'][BDHIKTWXYCEFGJLMNPQSTRA\W][BWACPDZ\W][ATBYZSW102456KJEGUCXR\W][0-9+]{5}[\']$))')].iloc[:,3]
+        
+        wallet_filter = df2[df2['Wallet Account No'].astype(str).str.contains('^(?!^[0-9+]{8}$)')].iloc[:,4]    
         mobile_filter = df2[df2['Mobile Number'].astype(str).str.contains('^(?!^[3+][0-9+]{9}$)')].iloc[:,5]
         name_filterf= pd.DataFrame(name_filter)
         cnic_filterf = pd.DataFrame(cnic_filter)
         wallet_filterf = pd.DataFrame(wallet_filter)
         mobile_filterf = pd.DataFrame(mobile_filter)
+        claim_filterf = pd.DataFrame(claim_filter)
 
        
         
 
-        return  '{} {} {} {}'.format(name_filterf.to_html(), cnic_filterf.to_html(), wallet_filterf.to_html() , mobile_filterf.to_html())
+        return  '{} \t {} \t {} \n {} {}'.format(name_filterf.to_html(), cnic_filterf.to_html(),claim_filterf.to_html(), wallet_filterf.to_html() , mobile_filterf.to_html())
         return name_filterf.to_html()
-        #return render_template('cell.html',m1= name_filter, m2 = cnic_filter, m3=wallet_filter , m4=mobile_filter )
-
+        
         
     return render_template('home.html' , title='Home')
 
