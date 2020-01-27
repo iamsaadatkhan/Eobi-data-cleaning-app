@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+    <!-- <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th scope="row">Pensioner name</th>
+              <th scope="row">cnic</th>
+              <th scope="row">wallet</th>
+              <th scope="row">mobile</th>
+              
+              
+            </tr>
+          </thead>
+          
+          <tbody>
+            
+                
+                 {%for i in m1 %}
+                {% if 'm1' %}
+                <tr><td><h6>{{ i }}</h6></td></tr>
+                {% endif %}
+                {%endfor%}
+           
+           
+                {%for i in m2 %}
+                {% if 'm2' %}
+                <tr><td><h6>{{ i }}</h6></td></tr>
+                {% endif %}
+                {%endfor%}
+           
+                {%for i in m3 %}
+                {% if 'm3' %}
+                <tr><td><h6>{{ i }}</h6></td></tr>
+                {% endif %}
+                {%endfor%}
+                
+                {%for i in m4 %}
+                {% if 'm4' %}
+                <tr><td><h6>{{ i }}</h6></td></tr>
+                {% endif %}
+                {%endfor%} 
+
+
+         
+        </tbody>
+    
+    </table> -->
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th scope="row">Pensioner name</th>
+              <th scope="row">cnic</th>
+              <th scope="row">wallet</th>
+              <th scope="row">mobile</th>
+              
+              
+            </tr>
+          </thead>
+          <tbody>    <div class="grid-container">
+
+    <div  style="float: left; height:470px; width:30%;">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th scope="row">Pensioner name</th>
+              </tr>
+              </thead>
+              <tbody>
+            
+                
+                {%for i in m1 %}
+               {% if 'm1' %}
+               <tr><td><h6>{{ i }}</h6></td></tr>
+               {% endif %}
+               {%endfor%}
+              </tbody>
+    </table>
+</div>
+
+<div style="float: right; height:470px; width:70%;">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th scope="row">cnic</th>
+              </tr>
+              </thead>
+              <tbody>
+            
+                
+                {%for i in m2 %}
+               {% if 'm2' %}
+               <tr><td><h6>{{ i }}</h6></td></tr>
+               {% endif %}
+               {%endfor%}
+            
+            </tbody>
+        </tbody>
+
+    
+        </table>
+</div >
+
+<div style="float: inherit;; width:50%; padding-left: 35.5rem; padding-top: 0rem;">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th scope="row">wallet</th>
+              </tr>
+              </thead>
+              <tbody>
+            
+                
+                {%for i in m3 %}
+               {% if 'm3' %}
+               <tr><td><h6>{{ i }}</h6></td></tr>
+               {% endif %}
+               {%endfor%}
+              </tbody>
+    </table>
+</div >
+
+<div style="float: inherit;; width:70%; padding-left: 35.5rem; ">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th scope="col">Mobile</th>
+              </tr>
+              </thead>
+              <tbody>
+        
+                {%for i in m4 %}
+               {% if 'm4' %}
+               <tr><td><h6>{{ i }}</h6></td></tr>
+               {% endif %}
+               {%endfor%}
+              </tbody>
+    </table>
+</div >
+
+
+</div>
+
+
+
+
+
+{% endblock %}
