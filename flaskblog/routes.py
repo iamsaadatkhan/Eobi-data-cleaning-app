@@ -55,9 +55,9 @@ def upload_file():
         df2 = pd.DataFrame(df2)
         df2.index = df2.index + 2
         p = df2.dropna(axis=1 , how='all')
-        name_filter = df2[df2['Pensioner Name'].astype(str).str.match('(?!(^[a-zA-Z\s\.]*$))')].iloc[:,1].sort_values()
+        name_filter = df2[df2['Pensioner Name'].astype(str).str.match('(?!(^[a-zA-Z\s\.\-]*$))')].iloc[:,1].sort_values()
         cnic_filter = df2[df2['CNIC'].astype(str).str.match('(?!(^[\'][0-9+]{5}-[0-9+]{7}-[0-9]{1}[\']$))')].iloc[:,2]
-        claim_filter = df2[df2['Claim No'].astype(str).str.match('(?!(^[\'][BDHIKTWXYCEFGJLMNPQSTRA\W][BWACPDZ\W][ATBYZSW102456KJEGUCXR\W][0-9+]{5}[\']$))')].iloc[:,3]
+        claim_filter = df2[df2['Claim No'].astype(str).str.match('(?!(^[\'][BDHIKTWXYCEFGJLMNPQSTRA\W][BWACPDZ\W][ATBYZSW1024596KJEGUCXR\W][0-9+]{5}[\']$))')].iloc[:,3]
         
         wallet_filter = df2[df2['Wallet Account No'].astype(str).str.contains('^(?!^[0-9+]{8}$)')].iloc[:,4]    
         mobile_filter = df2[df2['Mobile Number'].astype(str).str.contains('^(?!^[3+][0-9+]{9}$)')].iloc[:,5]
